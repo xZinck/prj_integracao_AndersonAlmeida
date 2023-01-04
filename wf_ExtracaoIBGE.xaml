@@ -1,0 +1,259 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="wk_ExtracaoIBGE" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ucat="clr-namespace:UiPath.Core.Activities.TextModifications;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="arg_inDtDadosCidade" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>678,4428</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <uix:NApplicationCard sap2010:Annotation.AnnotationText="Acessa site do IBGE busca a cidade disponível no TransactionItem e coleta cada dado disponível, define categoria do código da cidade e aloca em uma planilha." AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: IBGE Busca cidade" sap:VirtualizedContainerService.HintSize="530,4363" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="52e6132d-b669-479c-b688-f2f25bf8c516" Version="V2">
+    <uix:NApplicationCard.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,4104" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="var_strCidade" />
+            <Variable x:TypeArguments="x:String" Name="var_strDados" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ModifyText DisplayName="Modify Text Tirar parte a mais do nome" sap:VirtualizedContainerService.HintSize="434,343" sap2010:WorkflowViewState.IdRef="ModifyText_1" OutputText="[var_strCidade]" SourceText="[in_TransactionItem.SpecificContent(&quot;Cidade&quot;).ToString]">
+            <ui:ModifyText.Body>
+              <ActivityAction>
+                <Sequence DisplayName="Fazer" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ucat:FindAndReplaceTextModification DisplayName="Localizar e substituir texto" sap:VirtualizedContainerService.HintSize="342,149" sap2010:WorkflowViewState.IdRef="FindAndReplaceTextModification_1" SearchText="/MG">
+                    <ucat:FindAndReplaceTextModification.ReplaceText>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ucat:FindAndReplaceTextModification.ReplaceText>
+                  </ucat:FindAndReplaceTextModification>
+                </Sequence>
+              </ActivityAction>
+            </ui:ModifyText.Body>
+          </ui:ModifyText>
+          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Nome Cidade na Busca" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" Text="[var_strCidade]" Version="V3">
+            <uix:NTypeInto.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/panorama" DesignTimeRectangle="662, 150, 664, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='busca__input ng-valid ng-touched ng-dirty' aaname='' /&gt;" Guid="a1338dd5-8c1b-4d92-b6e2-93928b15440d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAApwAAAAiCAYAAADyFAmJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYFSURBVHhe7d3BaxxVHMBx/4/+E7n6F3jrsTdv3jwnEkSQEISyIoQeGlQqa4KkBFKCJASz9WAbEBKwdCuEUJAIDWwJluQQEoj83Jn3m9n33rw3s+m+qdF8P/ADOzsz+2Y2h29nbfve0dGRMAzDMAzDMExbQ3AyDMMwDMMwrY4TnDMzMwzDMAzDMAwz8diNWQZn9gIAAACQgh2dBCcAAACSIzgBAADQKoITAAAArSI4AQAA0CqCEwAAAK0iOAEAAG6Y87/+lL0nv8jiwy1Z3NiVvcNTfaUdrQRnf2lapqft6UpfX8PQoCed/L50pDfQbTeU/7PS5QcFAID2nP4hj77tytQn38gtb6bm12Tz1aXumFbi4OxLNwuHTk/sjhpsd4iJkrlHne2B3pebG+MmNq3r73f5OQEAoC1n+7IwNwrM9+e6cueL4cw/GAXobFcWXpzpAekkDM6B9DrDgFiK1EIeEzzRk8EwNPU/jb70b2Jg6VNePy7zCPV+wwIAACb1Rh7fL6JyRX546X2Ffvyb3J3X1z/fkL0L3Z5IuuBsDMqGIC3oUy4zXennYVKc15wjezpoC0VK8VS1mNqnZrG159utJ3DlV+E6oTBq2sd/veF+5NcxPEffuR7vqWi2zuE+veLraes9x/nKOr6PeRrrHuN9jld4b/u12D2/6U99AQBoxcG2fJA/xax5gnn2XOZmTXR+1DvWjWkkC84ijLx+cDTuk0eIFTj661GYjBecJlqsmNHI848bGX3NbcvPa4eVs4+GVyWi3EBz1lZZR+AcHnMt7j4m5KpfRbvxqucO7DdaX+D9dY1mnzGDs/LeukbnuvR/t/D281WPAwAAkzr8sWueXt7blRPdFlLut/CrvNZtKSQLznFCof7plRcyyo1Hs099cIbjsf69Q+u3Yyu8NjfO9Bw1QRW8R945fJV4znnXmEeft09o25Czhvy9q/uMjBuc4fX51xS8fpvGq//ZAQCAyewtmyeXt5b3dUvEsw2z35c7/9fgDEeKGzRjBGcktBrjyjvOXasXeCU7vmL7FOrPETsuX0fgvubX7ESfe1+j99q6zvrPIxP6TELB2XyO/CloNrGfkfw81nkBAEAy/YcanN//rlvCXv+8cr2DMxZGttp9Yk/6nFAcNzitwHGmJjg1jMy5vagKhlemGpzVfQpeeHnTSnCG7rUfnLWfWeiaxgvOfH3F9el7OJ+TTT97YhMAgHac766bkJxdl6fRP4T+RjbvmTCdanoSekXJgtMOmTA/4nyRYHPOO25w1q0jrjxPJX7N2qpRaK8ntk+h6fWwcBQ2R19+XOjJo7VvdJ/SWwZn5DcPseBsXgcAAJjIxXO5q38g6PbXu3L4t24vXcrhTyv61yN1ZfFANyeSLjj9EPE1hmD4eBMjbnC6++i2ImRiT0pDYeTTNXaX/ACKXJvzXg3XH309EtrKvf6Cd0zo2iL3+2pxHopks628juh7+/daj4sFZ2A7AABI52Rntfz7NqfmV+W7J/tycDyQ/rNdWfzK+rs4P12Xp4n/4aGEwZkJR4WJpnhUlfxY1F/bUZQHkxUzxbnt96xGWiicQnT92fhhmEeUfQ4vdDO6j32dZi26Xr0eex2xp36F0PVVjgkGnq7P3l5ZX+AanHtVfd3c/+HUBWfsOrPjKusEAADvyuHOmtwuwrJu5jZkL2F0Jg5OYxQXbxEZZWRmM4zG7Sxo7HgsQkpnGD55lHnRVoaaTnNsGsXag3HsrG04laeVQ/4+kRgrX/fW7SuCtWdfj39MMDgN97MIP830Py/3XlkRrq/l+9cFZ0bjtpzicwqsIfT5AQCAlhzvy6PlVbnzmcbl7AP58P6WbL48lfNXO/KxfvWeMjpbCc6k8nAJh9JNUARnKCYBAACSc6JzS/oJ/tUhgvOaIzgBAMA7V0Tn7Jo8TvCUk+C85ghOAADwr7g4k5OzS/3FZK5/cAIAAOA/jeAEAABAqwhOAAAAtIrgBAAAQKsITgAAALSK4AQAAECrgsFZRCfDMAzDMAzDTDp2YzrByTAMwzAMwzCph+BkGIZhGIZhWpwj+QevzDypqJqrvwAAAABJRU5ErkJggg==" InformativeScreenshot="e1a020e7df8561f670a652480470743e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+            </uix:NTypeInto.Target>
+          </uix:NTypeInto>
+          <uix:NClick ClickType="Single" DisplayName="Click Cidade Resultado" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" Version="V3">
+            <uix:NClick.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/panorama" DesignTimeRectangle="655, 190, 684, 62" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Acaiaca [3100401] MG'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='busca__auto-completar__resultado__item' tag='A' visibleinnertext='{0}*' /&gt;&quot;, var_strCidade)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='busca__auto-completar__resultado__item' tag='A' visibleinnertext='{0} [3100401] MG&amp;#xA;Município' type='' aaname='                     {0}                     [3100401]                     MG                                                                                     Município                                       ' check:text='{0}&amp;#xA;                    [3100401]&amp;#xA;                    MG&amp;#xA;                    &amp;#xA;                 ' /&gt;&quot;, var_strCidade)]" Guid="6cc34ec1-e495-41a6-8e09-10b63c056cda" ImageBase64="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" InformativeScreenshot="932301a57eb300cbcacfbc9511eeb3b2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+            </uix:NClick.Target>
+          </uix:NClick>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Cidade" DisplayName="Update Row Aloca na tabela a cidade" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1" Row="[arg_inDtDadosCidade(0)]" Value="[var_strCidade]" />
+          <uix:NGetText DisplayName="Get Text 'População estimada'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" TextString="[var_strDados]" Version="V3">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/acaiaca/panorama" DesignTimeRectangle="547, 409, 40, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'3.995'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' /&gt;" Guid="94c46ee3-a379-4595-98fa-716c6c5f0cd4" ImageBase64="" InformativeScreenshot="e7a1e3f149c77d25c15d310dbd2217bf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="304, 404, 238, 28" FriendlyName="'População estimada'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='lista__nome' tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='lista__nome' type='' tag='TD' aaname='                                          População estimada                                                           ' check:innerText='População estimada [2021]' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPIAAAAgCAYAAAAoniWAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPcSURBVHhe7ZnbjdwwDEVdn4EpZ+FKZhpxHQv4L0kD04ZWJvUg9bJnbe9mhPtxEFsPihLv1TjJsCyLAQC8NzAyAB0wPJ9PAwB4b2BkADoARgagA2BkADoARgagA2BkADoARgagA2BkADoARgagAzaMPJtpGMyQcrubpTj+JD7vZhxGc/8s9O1lnjjXj5njXZ1zlcXcb4MZH0uh7yy4TtNc6qszfyT1pHN3bf7sSuMtaq2NeZ51fjgHMefVvEHOLiPrg2Zh1op1CoeNvObI85fHSGK51kgaWjNcHP+3kWNeaQx+D/10MU5mTp+35jn8JaDb+Wxg5ON8w8gWVcgLOGzk30Ub+Seo1GkDbeQcMp+7sOXzlgH1WM5tuE1myi40GPksTjGy/9UjpIDduLvoD7HSy0CaNzUyjXXxLVoMTiiOmCuLJM7TF08154xafIvKy+Ur2yiu+EX2+3rEMWu7zEXtrbVv2fdhTWL/DLnROnHerk/dAtGQYg/Ul75rUiPPlFdpDrdl+gIvc/zTmgTlTVLqS9+l4PcYec3BP1sK6wVxiHlkjiCmZFwrZ0U9/rOUl7sQ9C+yiOENlpyPj8+G9nm19q3r4i8Cfuf1tKlFHEHTyC7XYkxLda6aJ0nOUrTlY8GrHP7HLn37WqTg6FmKSBRTCdMiBdcQnxJ7Y5yG9+FF1MxZQvF1exSwO5vCBdA2ssg3fa/lYVH7zsZpYyuyGkTqRk73ttfI9TOBka/le5/WgUJxpMgKwgwCSPukqJXAeQ1/iYy3lqAF1OfnjXaez3MjZ4mKIQhCdcJN2s8xcn3fOn4c6+tEF5XPyc5Tawj2mzE9s8IZNk28Upqj8wbf56CRnywaWTwpRnqWIhLFTM1TM3I6Tr6nRgi0hdfMWULxC+0laCyf1SlGbu07y1fUaWsNQW5kjqPbGD02NWB9XiStSWyDkY9z2MhaVFyYYBLqE8WjdycqIfy1jz8dZZ97lnN8/GS9KA6f7548KjkryvHpPTPI2sfv5xm5tu/EOG5/0cjxXOnSUnlGSuYsn4Mly23P+UnSs4xtMPJxjhvZwiZcBWORn3yu4BOJiZGxWGTM+LgHI2iBexGv2La5ZCAZR4ubsCKjtYTYqjln6PhKsHINS1jbmYnFLgT8ipG39h3WsLj/2tHmZaa5XkNlZBlPIs5Gx+W2PfMYGPlKNox8ECXMC1nFtPmLAFKUkX8FGPks+jDyyroWzPwSMHI/dGDk+OkLQbxG+FRu/tXiIsQnOep2nGuNDAD4EWBkADoARgagA2BkADoARgagA2BkADpg+Pf3jwEAvDf4RQbg7XmaLwlbe0YLnLmsAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+          </uix:NGetText>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="PopulacaoEstimada" DisplayName="Update Row Aloca na tabela a PopulacaoEstimada" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_2" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+          <uix:NGetText DisplayName="Get Text 'População no'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" TextString="[var_strDados]" Version="V3">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/acaiaca/panorama" DesignTimeRectangle="547, 438, 40, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'3.920'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' /&gt;" Guid="b80d381e-8720-4646-bfcf-8c885859d1b8" ImageBase64="" InformativeScreenshot="f057a218e5fd4b80fc1e83a3c9f71dd4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="304, 433, 238, 28" FriendlyName="'População no'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='lista__nome' tableRow='4' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='lista__nome' type='' tag='TD' aaname='                                          População no último censo                                                           ' check:innerText='População no último censo [2010]' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPIAAAAgCAYAAAAoniWAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ/SURBVHhe7Z1RcuMgEER9PlflOC6fxLmIzpEq/+3uBXwNrRgGaAaQiJU4NumPV2UEGmaaaUmVnxxut9tMCHltDv/+/pkJIa8N38iEDACNTMgA0MiEDACNTMgA0MiEDACNTMgA0MiEDACNTMgA0MiEDMCGkaf5fDjMB8vbZb5W138RH5f5eDjOl4/KXC/T2ed6mny87865F8kLalupdTpp/ub62Fzny5v2mdYuOsT+s1phj57nKV4HRONyDuOeJ70e+mZv/z2YLiPHIgUV+jsbbLeRXY7+/uv7UQ7m+H6trHs0Ka94DWs1df9mI4eek/ODh7A/z2RK1Kiql2jqjGmMLIbVa/hbcH2/p/8ezx1GXigK/2J2G/mFWDHy7yQ3ckGmkelPmUt9GR7i51PZr7np7Z6/1MhBMAE/YXXdBeZjLPswWGtoWavxF/K3q8+xiK+Hk+7LD7KZM6J5nE+w1jzx8fOs+fbsqhXr8HOp2Xwtx/dLWuNylnthHPdsaVLS1qERY0uT7KzgDBe6NP+MkfG3nVvG12nye1j9o56hj+zY1Z7n/uzs/7TORKrN2bEKZMVtHpARtbJfPAC4T5omNphZt5YzIvFgTsdBD9kjNqTXKn/IKL214u9lnTVyiqEmC3tnedVqBf0Qk1f54Ch1DXvVNamcVcixV3OdaxlZcszqBl3t/gGrf2UPFzedXSPOE7P7j13p8PUeFE1+oyDQIFbcolnqQvqnut63si7H1xEOajVnpIjv41QNs5AbG+it1ezXNFYxhryKnMs8A4UOAYmR6xEbvYiPmmi/VGJ2a6751ozszx72LvJ0+2NuSrFXuUesT8aNOE/MfZ/WkUqToGiVw4qC9Ta37hEeIsc3MHKzGcJcuO+43Bfy3MgZ6Wha1OYpjFzUUql39fpCph3gclnVJI2zez6jua61PVeY2GFzKXJTNjWxY1dDJc4Ts9PIt/UnrfxGQUAwK26roe06HLcObuOgut8ORXzUw+4x9hs5n2tpYpC1fq5bc80X43kT19Yaw7Xyruzl8rF6pj1N3Bdgt5Fzkbwg8cBkDgSTsQoEh+zmsicuNgveE+Kb/cqG7smjkTOy0bS5cf1czTDdtZr97jKyncv0M2Q6YD31+DJe06Q6p+NezXUuaLWa/wI+IJoPJlNnca2Yh7zjtedmv5EXfGMuIjrwjaQCnZ3AOo+xRHi97v8iq+JlDaGHLuuWa1O9kVIcbGC9vhyuPeRmzsha0+oarKHemJ7P1ur2SDlbY9mxzSvXZO38Mh2KZk4xYm1bmqDuCynHTs2NkTN9gXqtxqyBwqgejJ1r5GJijc/PhpF30hDwy3HNtWIi8krkRv4ZaOScRxnZ4faimQeARr6HAYycPq1+9vDJ1+CNLJ+8P/Fglp51+9PIhJAHQyMTMgA0MiEDQCMTMgA0MiEDQCMTMgD8J26EDADfyIS8PLf5P3IiDLYEApOHAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+          </uix:NGetText>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="PopulacaoCenso" DisplayName="Update Row Aloca na tabela a PopulacaoCenso" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_3" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+          <Assign sap2010:Annotation.AnnotationText="Verifica a população censo para ver em qual tipo de código se encaixa." DisplayName="Assign define codigo" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[var_strDados]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[if(Convert.ToInt32(var_strDados.Replace(".",""))&lt;15001,"Código 1",if(Convert.ToInt32(var_strDados.Replace(".",""))&lt;30001,"Código 2","Código 3")).ToString]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Codigo" DisplayName="Update Row Aloca na tabela o Codigo" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_4" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+          <uix:NGetText DisplayName="Get Text 'Densidade demográfica'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" TextString="[var_strDados]" Version="V3">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/acaiaca/panorama" DesignTimeRectangle="547, 467, 40, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'38,47'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='6' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' /&gt;" Guid="d4dc249a-cf23-47b9-8d33-461f21620942" ImageBase64="" InformativeScreenshot="e69e2368dc7407c6d58050a1983357ae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="304, 462, 238, 28" FriendlyName="'Densidade demográfica'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='lista__nome' tableRow='6' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='lista__nome' type='' tag='TD' aaname='                                          Densidade demográfica                                                           ' check:innerText='Densidade demográfica [2010]' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPIAAAAgCAYAAAAoniWAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARNSURBVHhe7Z1NjtswDIV9PgO5SbeDnCS5iIGeIgWya3uBXMO1KFEiKVGZn0yTKG/xYUamTErie3Yym5kul8sKAHhupr9/fq8AgOcGb2QABgBGBmAAYGQABgBGBmAAYGQABgBGBmAAYGQABgBGBmAAYGQABuCKkZd1P03rZNkd1nNz/o34dVjnaV4PvxqxtKb90or1OK+H3bTOx3Mj9hE+W/9/E/c7vS3iWunn/PZj+7lfF3XPF1j2SR+pb9TDpJeAWsdlPR/nHPN6srw1YjJv1mHaa6POq/AuI2vRpkP7TjPDyF8nGKtlHu4bGe/GRs6asGcUx/nsZX+dXgcT1yaXPaz7SfuDkVt4or2nmD9b+8WM3OBbha6MXEPGTLXVAyXFSl/i+U67/bq3/bKmNzVhZBdPtLUp+AlqP97EBm5N4ZhshPyYtJHrtBrG81KuPFfGNurGp1gljCSYRNeYvfpeHt7DsdwbapPYxDjXUGdh3lBefbpnG6ezj7Vjb/L89NaVdeka5RRvZK++ur7hGSXke6eR5e/1eNnWFn42Hrx2zWYMI7v4bx95+PoJqxtA84QwaExz4zwt/NQU+p3v0WtgQcZxiAnRqcYaIVCMxyam6ll69Tt52AAsLFWf8/BaWzV6sTRONXJ9jmcx6/VRjPukzkrXKLFWj5xzCvd4Rk7r5DxBA/6aGXO2AVuD8vIevDyvwQ2MbJodEAcuDR8oYor3NZsvBaMEF/DXRLl5biU6IQwjgIAVV6ZXv5fH1rdjmbdX42p9x1hiLu/LNXJVw4HmOfVCrNXLtAapARj59tzgo3VqVEU8YN/IJU++h68Lger55Z64Jn3/vNvmdsSZBUQxUZdpiKBbv5fnA0aua5Rz78WaRlZrmrczKWZQubr1C9Q/zredr/vgCPmqHLWJA1YTdhyRGkvXxJpbY9pHo4evwOeMTALSZqrmJPpGlsRa1DgpUNs8uaZeYyuRC2FQTObs0Kvfy2Pr27HM+5E9VvWdPTbGnpHrGolre5CEHKqvop9y3oY1XH7AijlNI1N9sU5TE0Z2EaLJ1+IBVwcoxmTeNPaNbHPHvLVAjSBIdFLkPC+tKzc6jbk25eQ8ViS+6KqYrN/Lc80ElIfXqs+Czqgba51TwOw5rZXXp/rUqZ/z/oxnxtepl6qeIOTLGjDrsMh1V3tg7Nnaa3Wc9gcjt4gNpo9VksZhxSYz5anpG3kbUxPFfTzPNlfOS399juJKgqHYNn+xopDrj3/dLY03e+sJwK0fcPI09yDGykgc5zxyDzw3xubjoZjO5jRzw1rk+ftG3lD1rXn5mjG8RBrZ5Mpko5cHUkCblWkZeUPmFvkCMDJ4IoKZjHkfAWnkOwEjg8eF3kDlzRnfZOJN+ijAyHcFRn4C9NeWB3wbB/JH+nusT3zFgpEBAM8KjAzAAMDIAAwAjAzAAMDIAAwAjAzAAOCfuAEwANPpdFoBAM/Maf0HhHLjfMKovIAAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+          </uix:NGetText>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="DensidadeDemografica" DisplayName="Update Row Aloca na tabela a DensidadeDemografica" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_5" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+          <uix:NGetText DisplayName="Get Text 'Código do Município'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" TextString="[var_strDados]" Version="V3">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/acaiaca/panorama" DesignTimeRectangle="278, 243, 136, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'3100401'" FullSelectorArgument="&lt;webctrl parentid='dados' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dados' tag='P' type='' class='topo__valor' /&gt;" Guid="101fa0c8-b4c3-4bd5-a4b8-bdfe83fd8c99" ImageBase64="" InformativeScreenshot="75ad5f3503b1efe40c5002a0585cc26a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="278, 227, 136, 16" ElementType="Text" FriendlyName="'Código do Município'" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='topo__titulo desktop' aaname='                     Código do Município                 ' check:innerText='Código do Município' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIwAAAAUCAYAAABf9dUQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMRSURBVGhD7VdLbiIxEJ175GrcYy7AIncIYscWsYUtq6wjJE7ANRyXP9THz213JwzKxIsn4a5yfV49quHP7XZzAwO9GIIZmIUhmIFZGIIZmIUvCubqtq9v7uX15D6gfeChOO/dy983tz4D24MABJNE4AvJWB2uxifhcnKrLrG8u7Vo7OOw+6ciO258H5t3aGuCepwaSss+FyHezm0vwGZAffXn1TNYCi2Y1LwWSEwECb9cO4f+PcUuxdcFs/NfDDTExM1TevPcd4jquyEEEzcL3CZI9WkdRpRkhi2S7Zv95IYJA02+q8OpFFcjV4Ek/OjvcxeC4UHHnJUNSsi9H/alH9VlekNcKcEG+97HE/zIbWvvq150rRSXz9STv3cW/mqLl19aNSNf0/HuWwcLBjRaRRig8DXnWAgXkAWBBNPybeUqkAjW933Mu2AicZroCdHcefF+5jVKta7PZhCAx1IwE/Wo+ya2OZeCIe4Ml/ea9V3Luz3XwIIJxLYv1DYRk4LsoNjQSPRlQjzUwFu5+FmGFGN+Jv2RfbJ3McDjRgqBeqI7urc+wfTZYa0CdM8KpuQy55J24Dv1hhFYIBiULDUXmq4Xk58xEeSryWs3JnPp5wQkJumP7JHYtmCIozuhxBfqd4YgWnZYqwDZtWA6uQQ1EHQ8jAWvpNYQkf0/EUyoJ/pRHFgj4FHlnGGHtQqQ/XmCmVxJMnHrNYHsmlQWjBZSQGimNxc/y+DY/Ez6I3vvK4nOFCv+bsn+urc5gmjZYa0CdI+5MXUQVC5pB76T82cIwXiEBHjYqvBAsGgannkAgRBRoCQifJ7wbeYqYMgI/mIgyW6JrhJlB1yJx+SbeInTJYIpY+uhIsHIOam4Jpbl3Z5r0IIJSIkFIJmZuIBygLGAfF//VZaCoXMWCfuaeI1cBfKQCD7PVhFH0D1WxUIoBmyHaM8esl6f/0j9LhJMPnOtsg8kmLX/my9z83Yq65Qz6hELAQjm2aDGOkQxYACE+wA8WTDle9Nun4Fe/ArBeNiVO8SyEL9FMAM/CkMwAzNwc5+e9C83dPUNHwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+          </uix:NGetText>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="CodigoMunicipio" DisplayName="Update Row Aloca na tabela o codigo do municipio" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_6" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+          <uix:NGetText DisplayName="Get Text 'Gentílico'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" TextString="[var_strDados]" Version="V3">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/acaiaca/panorama" DesignTimeRectangle="424, 243, 113, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'acaiaquense'" FullSelectorArgument="&lt;webctrl idx='2' parentid='dados' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='dados' tag='P' class='topo__valor' /&gt;" Guid="983c51a7-e34b-4bee-af0c-623ed41caaa1" ImageBase64="" InformativeScreenshot="9d3a125fb220e26c64e873f687903a78.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="424, 227, 113, 16" ElementType="Text" FriendlyName="'Gentílico'" FullSelectorArgument="&lt;webctrl class='topo__titulo' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl class='topo__titulo' tag='H3' type='' aaname='                     Gentílico                 ' check:innerText='Gentílico' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHUAAAAUCAYAAACzrHJDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGGSURBVGhD7ZY7bsMwDEB7j14t9+gFMuQONbJlDbLGa6bMQQCfwNdQI1KWSEq25RZGW5rDA+LoCz6S9lvf987QhUlViElViElVyB+S2rnj4dO9H1r3KI4btZSlPlu3+3gFmNLc83k/4XbmAv2Z5PlxOaVxuM/JHZ9hrjFJJhWCmQVwhSrKpHZsbybVWASXOlkRd7eXY14Mqeb9LY2BlKbFZAjju0tXWHd2V/8fnB1+D+tHK9XfJe0ruwgmpth/QzCpKKKyzYIYEjAR+CGwUTTMJ2KySq2Vil0jJoh4xnPFPhsTy6ReGxqsKTCQtDI9NCmYFACri0n+jlSZTAxxBiCTQD8zUsO7NLayYVy0P8rKUvN9CayiE/XJqoMF7ZdmfKkiOCb191jwoUSlzre0taRa+52HS30BwRzJdt9eY3AguHQeD95qUguS4G607ct9RpNAJ5lUAIJI3pMeJgjBgKU5NNCzUsNzTIxqqXRtQNyN32tbQj1lqca/xqQqxKQqxKQqxKSqo3df6qXFxleBo1EAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+          </uix:NGetText>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Gentilico" DisplayName="Update Row Aloca na tabela o gentilico" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_7" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+          <uix:NGetText DisplayName="Get Text 'Prefeito'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="52e6132d-b669-479c-b688-f2f25bf8c516" TextString="[var_strDados]" Version="V3">
+            <uix:NGetText.Target>
+              <uix:TargetAnchorable BrowserURL="https://cidades.ibge.gov.br/brasil/mg/acaiaca/panorama" DesignTimeRectangle="278, 321, 378, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'LUIZ CARLOS FAUSTINO'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app&amp;gt;shell&amp;gt;div&amp;gt;div&amp;gt;panorama-shell&amp;gt;div&amp;gt;section&amp;gt;panorama-resumo&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' idx='3' parentid='dados' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='topo__valor' parentid='dados' tag='P' /&gt;" Guid="cf58875c-186b-4d7d-96e1-1307531d3516" ImageBase64="" InformativeScreenshot="1e4dc2a92e626e31c62ae6dd20bef598.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                <uix:TargetAnchorable.Anchors>
+                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                    <uix:Target DesignTimeRectangle="278, 305, 378, 16" ElementType="Text" FriendlyName="'Prefeito'" FullSelectorArgument="&lt;webctrl class='topo__titulo' css-selector='body&amp;gt;app&amp;gt;shell&amp;gt;div&amp;gt;div&amp;gt;panorama-shell&amp;gt;div&amp;gt;section&amp;gt;panorama-resumo&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h3' idx='2' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl class='topo__titulo' type='' aaname='                     Prefeito                 ' tag='H3' check:innerText='Prefeito' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAX4AAAAUCAYAAACKwlZ0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGHSURBVHhe7dm9jcIwGIDh24PVssctQMEOh+hoUVrSUlEjJCbwGt8RJ0787+TIVX6LR4Loc9K9sZwvpZQAAOpB+AGgMoQfACpD+AGgMoQfACpjhf8lp8OP7L5DTftyFq1n3/si1+jM7NGeZXfo5NH/v13m3wCAjwXh39/cAaXusv80/s9OmgXBjyL8ALCpBeEfd+DH+/S7aTv9Muh38NN8H+jxWu769AJJzY/P0LF3ZqwXh3P9LKfnvBYAkPen8Aex1SG2wqx3+NaMv+MvzE/hN7P2jl+vte7t/wcAZJXDr6M8X3eirMXX2S8LN/zl+XT4h7X+sdP1+N75m2cBALJWf9wNwz98A4iti4e/PJ8O/7A2+5IBAGQtOuqxpcKfXRcJf26e8APA/9kg/PHjF0fkqCc3nw5/fC1HPQCw3Abhfws+sHqBdsJfnk+HP7I2uBcAIGeb8Jvr/Tn9yNmV++EvzLvPMN8E/NibtUQfANawwg8AqAHhB4DKEH4AqAzhB4DKEH4AqIqSXyZbT80blsiUAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                  </scg:List>
+                </uix:TargetAnchorable.Anchors>
+              </uix:TargetAnchorable>
+            </uix:NGetText.Target>
+          </uix:NGetText>
+          <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Prefeito" DisplayName="Update Row Aloca na tabela o prefeito" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="UpdateRowItem_8" Row="[arg_inDtDadosCidade(0)]" Value="[var_strDados]" />
+        </Sequence>
+      </ActivityAction>
+    </uix:NApplicationCard.Body>
+    <uix:NApplicationCard.TargetApp>
+      <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="43a4453a3d8e8164e19780380e9cca5e.jpg" Selector="&lt;html app='chrome.exe' title='IBGE | Cidades@ | Minas Gerais | Panorama' /&gt;" />
+    </uix:NApplicationCard.TargetApp>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </uix:NApplicationCard>
+</Activity>
